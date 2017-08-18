@@ -1,7 +1,7 @@
 <?php
 require_once('command.php');
 require_once('domain.php');
-require_once('command/student_registry.php');
+require_once('command/domain_registry.php');
 
 class AddDomainCommand implements Command {
 
