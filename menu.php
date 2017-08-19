@@ -1,6 +1,6 @@
 <?php
 
-require_once('simple_menu_item.php');
+include('simple_menu_item.php');
 
 class Menu extends MenuItem {
 

@@ -48,8 +48,8 @@ class DomainRegistry {
         }
         $visitor->finishVisit();
     }
-/*
-    public function save() {
+
+  /*  public function save() {
         $students = array();
         for($i = 0; $i < $this->getStudentCount(); $i++) {
            $s = $this->getStudent($i);
@@ -80,7 +80,6 @@ class DomainRegistry {
 
             $this->addStudent($student);
         }
-
     }
     */
 }
