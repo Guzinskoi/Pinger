@@ -1,18 +1,24 @@
 <?php
 require_once ('menu.php');
 require_once ('command/add_domain.php');
-require_once ('command/list_domain.php');
+require_once ('command/list_domains.php');
+require_once ('command/delete_domain.php');
+require_once ('command/edit_name_domain.php');
+require_once ('command/edit_domain_ip.php');
+require_once ('command/select_domain.php');
+require_once ('command/deselect_domain.php');
+require_once ('command/show_selected.php');
 
 
 $menu = new Menu();
 
-$menu->addItem("Список доменов", new ListStudentsCommand());
-$menu->addItem("Добавить домен", new AddStudentCommand());
+$menu->addItem("Список доменов", new ListDomainsCommand());
+$menu->addItem("Добавить домен", new AddDomainCommand());
 $submenu = $menu->addSubmenu("Редактировать домен");
-$menu->addItem("удалить домен", new DeleteStudentCommand());
+$menu->addItem("Удалить домен", new DeleteDomainCommand());
 
-$submenu->addItem("Изменить имя домена", new EditLastNameCommand());
-$submenu->addItem("Изменить адрес домена", new EditFirstNameCommand());
+$submenu->addItem("Изменить имя домена", new EditNameDomainCommand());
+$submenu->addItem("Изменить адрес домена", new EditDomainIpCommand());
 
-//StudentRegistry::getInstance()->load();
+//DomainRegistry::getInstance()->load();
 $menu->execute();

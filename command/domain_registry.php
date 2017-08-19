@@ -20,35 +20,35 @@ class DomainRegistry {
     }
 
     public function addDomain($domain) {
-        $this->$domain_list[] = $domain;
+        $this->domain_list[] = $domain;
     }
 
     public function getDomain($number) {
-        return $this->$domain_list[$number];
+        return $this->domain_list[$number];
     }
 
     public function removeDomain($number) {
         if(is_int($number))
-            unset($this->$domain_list[$number]);
+            unset($this->domain_list[$number]);
         else {
-            if(($domain_key = array_search($domain, $$domain_list)) !== false) {
-                unset($$domain_list[$$domain_key]);
+            if(($domain_key = array_search($domain, $domain_list)) !== false) {
+                unset($domain_list[$domain_key]);
             }
         }
     }
 
     public function getDomainCount() {
-        return count($this->$$domain_list);
+        return count($this->domain_list);
     }
-/*
-    public function visitStudents($visitor) {
+
+    public function visitDomain($visitor) {
         $visitor->startVisit();
-        for($i = 0; $i < count($this->student_list); $i++) {
-            $visitor->visitStudent($i, $this->student_list[$i]);
+        for($i = 0; $i < count($this->domain_list); $i++) {
+            $visitor->visitDomain($i, $this->domain_list[$i]);
         }
         $visitor->finishVisit();
     }
-
+/*
     public function save() {
         $students = array();
         for($i = 0; $i < $this->getStudentCount(); $i++) {
@@ -80,6 +80,7 @@ class DomainRegistry {
 
             $this->addStudent($student);
         }
-*/
+
     }
+    */
 }

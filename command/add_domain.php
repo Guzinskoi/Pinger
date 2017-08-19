@@ -7,10 +7,10 @@ class AddDomainCommand implements Command {
 
     public function execute() {
         $domain = new Domain();
-        $domain->$domain_name = readline("Введите имя домена: ");
-        $domain->$domain_ip = readline("Введите ip домена: ");
+        $domain->domain_name = readline("Введите имя домена: ");
+        $domain->domain_ip = readline("Введите ip домена: ");
 
-//        StudentRegistry::getInstance()->addStudent($student);
+        DomainRegistry::getInstance()->addDomain($domain);
 //        StudentRegistry::getInstance()->save();
     }
 }
